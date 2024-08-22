@@ -1,4 +1,5 @@
 ﻿using EmprestimoLivros.Data;
+using EmprestimoLivros.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EmprestimoLivros.Controllers
@@ -16,7 +17,10 @@ namespace EmprestimoLivros.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<EmprestimosModel>  emprestimos = _db.Emprestimos;//entrando no banco de dados e pegando a tabela inteira do emprestimos
+
+            return View(emprestimos);
+
         }
     }
 }

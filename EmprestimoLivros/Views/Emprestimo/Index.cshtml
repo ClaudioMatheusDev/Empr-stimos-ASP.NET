@@ -15,7 +15,7 @@
         @if(Model != null)
         {
 
-            @foreach(var emprestimo in Model)
+            @foreach(var emprestimo in Model) //PARA CADA ITEM QUE TEM DENTRO DO MODEL, CRIE UMA TABELA COM SUAS INFORMAÇÕES
             {
                 <tr>
                     <th scope="row">@emprestimo.Recebedor</th>
