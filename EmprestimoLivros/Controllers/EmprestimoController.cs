@@ -23,7 +23,7 @@ namespace EmprestimoLivros.Controllers
 
         }
 
-        //ACTION COM O MESMO NOME CADASTRAR, A MESMA AUTOMATICAMENTE ESTÁ RETORNANDO O METODO GET
+        [HttpGet]//ACTION COM O MESMO NOME CADASTRAR, A MESMA AUTOMATICAMENTE ESTÁ RETORNANDO O METODO GET
         public IActionResult Cadastrar()
         {
             return View();
