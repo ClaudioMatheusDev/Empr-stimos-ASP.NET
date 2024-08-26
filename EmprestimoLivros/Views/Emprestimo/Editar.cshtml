@@ -1,0 +1,47 @@
+﻿@model EmprestimosModel //Declarando a model EMPRESTIMOS para realizar todas os procedimentos dele
+
+@{
+    ViewData["tittle"] = "Editar Empréstimo"; // MODIFICANDO O NOME DA PAGINA
+}
+
+<div class="container bg-dark p-5 rounded-5">
+
+    <div class="mb-5 text-center">
+        <h1 class="text-light">Edição de Empréstimos</h1>
+    </div>
+
+    <form method="post" asp-controller="Emprestimo" asp-action="Editar">
+
+        <input type="hidden" asp-for="Id"/> <!-- PEGANDO A ROTA DO ID DO EMPRESTIMO, IGUAL DECLARAMOS NO BOTÃO DE EDITAR E EXCLUIR DO INDEX-->
+
+        <div class="mb-3">
+            <label for="Recebedor" class="form-label text-light">Recebedor:</label>
+            <input type="text" class="form-control" asp-for="Recebedor" id="Recebedor" placeholder="Quem está recebendo o livro?">
+            <span class="text-danger" asp-validation-for="Recebedor"></span> <!-- ADICIONANDO O SPAN, ERROR MESSAGE QUE ADICIONAMOS NO NOSSO EMPRESTIMO MODEL, UTILIZANDO O ASP-VALIDATION-FOR -->
+        </div>
+
+
+
+        <div class="mb-3">
+            <label for="Fornecedor" class="form-label text-light">Fornecedor</label>
+            <input type="text" class="form-control" asp-for="Fornecedor" id="Fornecedor" placeholder="Quem está emprestando o livro?">
+            <span class="text-danger" asp-validation-for="Fornecedor"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Livro" class="form-label text-light">Livro:</label>
+            <input type="text" class="form-control" asp-for="LivroEmprestado" id="Livro" placeholder="Qual é o livro que está sendo emprestado?">
+            <span class="text-danger" asp-validation-for="LivroEmprestado"></span>
+        </div>
+
+
+        <!--ASP-FOR SERIA É FORMA DE DECLAR O INPUT DE QUAL DADOS SERÁ INSIRIDO, IGUAL OS DADOS QUE TEMOS NO NOSSO EMPRESTIMO MODEL-->
+
+        <div class="d-flex gap-5 mt-5">
+            <button type="submit" class="btn btn-primary btn-success w-50">Adicionar</button>
+            <a class="btn btn-primary w-50" asp-controller="Emprestimo" asp-action="Index">Voltar</a>
+        </div>
+
+    </form>
+
+</div>
