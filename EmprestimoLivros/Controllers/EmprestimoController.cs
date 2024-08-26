@@ -17,10 +17,19 @@ namespace EmprestimoLivros.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<EmprestimosModel>  emprestimos = _db.Emprestimos;//entrando no banco de dados e pegando a tabela inteira do emprestimos
+            IEnumerable<EmprestimosModel> emprestimos = _db.Emprestimos;//entrando no banco de dados e pegando a tabela inteira do emprestimos
 
             return View(emprestimos);
 
         }
+
+
+        public IActionResult Cadastrar()
+        {
+            return View();
+        }
+
+
+
     }
 }
