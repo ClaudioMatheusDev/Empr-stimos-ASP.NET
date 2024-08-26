@@ -1,6 +1,44 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model EmprestimosModel //Declarando a model EMPRESTIMOS para realizar todas os procedimentos dele
+
 @{
     ViewData["tittle"] = "Cadastrar Empréstimo"; // MODIFICANDO O NOME DA PAGINA
 }
+
+<div class="container bg-dark p-5 rounded-5">
+
+    <div class="mb-5 text-center">
+        <h1 class="text-light">Cadastro de Empréstimos</h1>
+    </div>
+
+    <form method="post" asp-controller="Emprestimo" asp-action="Cadastrar">
+
+
+
+        <div class="mb-3">
+            <label for="Recebedor" class="form-label text-light">Recebedor:</label>
+            <input type="text" class="form-control" asp-for="Recebedor" id="Recebedor" placeholder="Quem está recebendo o livro?">
+        </div>
+
+
+
+        <div class="mb-3">
+            <label for="Fornecedor" class="form-label text-light">Fornecedor</label>
+            <input type="text" class="form-control" asp-for="Fornecedor" id="Fornecedor" placeholder="Quem está emprestando o livro?">
+        </div>
+
+        <div class="mb-3">
+            <label for="Livro" class="form-label text-light">Livro:</label>
+            <input type="text" class="form-control" asp-for="LivroEmprestado" id="Livro" placeholder="Qual é o livro que está sendo emprestado?">
+        </div>
+
+
+        <!--ASP-FOR SERIA É FORMA DE DECLAR O INPUT DE QUAL DADOS SERÁ INSIRIDO, IGUAL OS DADOS QUE TEMOS NO NOSSO EMPRESTIMO MODEL-->
+
+        <div class="d-flex gap-5 mt-5">
+        <button type="submit" class="btn btn-primary btn-success w-50">Adicionar</button>
+        <a class="btn btn-primary w-50" asp-controller="Emprestimo" asp-action="Index">Voltar</a>
+        </div>
+
+    </form>
+
+</div>

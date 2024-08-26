@@ -1,6 +1,6 @@
 ﻿namespace EmprestimoLivros.Models
 {
-    public class EmprestimosModel
+    public class EmprestimosModel //ESTRUTURA QUE ESTAMOS UTILIZANDO NO SQL 
     {
         public int Id { get; set; }
         public string Recebedor { get; set; }
