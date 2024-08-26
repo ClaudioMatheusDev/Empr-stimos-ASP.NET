@@ -12,7 +12,7 @@
 
     <form method="post" asp-controller="Emprestimo" asp-action="Editar">
 
-        <input type="hidden" asp-for="Id"/> <!-- PEGANDO A ROTA DO ID DO EMPRESTIMO, IGUAL DECLARAMOS NO BOTÃO DE EDITAR E EXCLUIR DO INDEX-->
+        <input type="hidden" asp-for="Id"/> <!-- PEGANDO A ROTA DO ID DO EMPRESTIMO, IGUAL DECLARAMOS NO BOTÃO DE EDITAR E EXCLUIR -->
 
         <div class="mb-3">
             <label for="Recebedor" class="form-label text-light">Recebedor:</label>
@@ -38,7 +38,7 @@
         <!--ASP-FOR SERIA É FORMA DE DECLAR O INPUT DE QUAL DADOS SERÁ INSIRIDO, IGUAL OS DADOS QUE TEMOS NO NOSSO EMPRESTIMO MODEL-->
 
         <div class="d-flex gap-5 mt-5">
-            <button type="submit" class="btn btn-primary btn-success w-50">Adicionar</button>
+            <button type="submit" class="btn btn-primary btn-success w-50">Editar</button>
             <a class="btn btn-primary w-50" asp-controller="Emprestimo" asp-action="Index">Voltar</a>
         </div>
 

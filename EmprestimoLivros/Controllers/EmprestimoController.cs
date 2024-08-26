@@ -21,13 +21,13 @@ namespace EmprestimoLivros.Controllers
 
             return View(emprestimos);
 
-        }
+        }//RETORNANDO NOSSA INDEX E IMPRIMINDO A TABELAS COM OS DADOS
 
         [HttpGet]//ACTION COM O MESMO NOME CADASTRAR, A MESMA AUTOMATICAMENTE ESTÁ RETORNANDO O METODO GET
         public IActionResult Cadastrar()
         {
             return View();
-        }
+        }//CADASTRAR HTTPGET, RETORNANDO A TELA DE CADASTRO
 
         [HttpGet]
         public IActionResult Editar(int? id)
@@ -45,7 +45,7 @@ namespace EmprestimoLivros.Controllers
             }
 
             return View(emprestimo);
-        }
+        } //EDITAR 
 
 
 
@@ -63,7 +63,25 @@ namespace EmprestimoLivros.Controllers
 
             return View(); //CASO O IF NÃO FOR VALIDO, O MESMO RETORNA O USUARIO PARA A VIEW(CADASTRAR) 
 
+        } // CADASTRAR
+
+
+        [HttpPost]
+        public IActionResult Editar(EmprestimosModel emprestimo)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Emprestimos.Update(emprestimo);//ENTRANDO NO BANCO DE DADOS, NA TABELA EMPRESTIMO E MODIFICANDO APENAS O emprestimo SELECIONADO
+                _db.SaveChanges();//Entrando no banco de dados e salvando as novas informações modificadas
+
+
+                return RedirectToAction("Index");// Depois de tudo salvo, redireciona o usuario para a pagina index
+            }
+
+            return View(emprestimo); //CASO NÃO FOR VALIDO, RETORNA SEMPRE PARA A PAGINA DE ATUALIZAR O EMPRESTIMO
+
         }
+
 
     }
 }
