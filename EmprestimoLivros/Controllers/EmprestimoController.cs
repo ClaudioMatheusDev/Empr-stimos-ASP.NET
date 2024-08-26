@@ -48,6 +48,26 @@ namespace EmprestimoLivros.Controllers
         } //EDITAR 
 
 
+        [HttpGet]
+        public IActionResult Excluir(int? id) //EXCLUIR PASSANDO O ID DO EMPRESTIMO PARA EXCLUIR
+        {
+            if (id == null || id == 0) //Verificando se o ID é nulo ou zero, caso for, retorna um erro 
+            {
+                return NotFound();
+            }
+
+            EmprestimosModel emprestimo = _db.Emprestimos.FirstOrDefault(x => x.Id == id); //O X SERIA AS TABELAS E COLUNAS 
+       
+        
+            if (emprestimo == null)
+            {
+                return NotFound();
+            }
+
+            return View(emprestimo);
+        
+        }//EXCLUIR
+
 
         [HttpPost] //ADICIONANDO O HTTPPOST EM CIMA DA ACTION, DECLARAMOS QUE A MESMA ESTÁ ENVIANDO DADOS, ENTÃO ESTÁ RETORNANDO UM METODO POST
         public IActionResult Cadastrar(EmprestimosModel emprestimos)
@@ -80,8 +100,22 @@ namespace EmprestimoLivros.Controllers
 
             return View(emprestimo); //CASO NÃO FOR VALIDO, RETORNA SEMPRE PARA A PAGINA DE ATUALIZAR O EMPRESTIMO
 
-        }
+        }//EDITAR 
 
+        [HttpPost]
+        public IActionResult Excluir(EmprestimosModel emprestimo)
+        {
+            if (emprestimo == null)
+            {
+                return NotFound();
+            }
+
+            _db.Emprestimos.Remove(emprestimo);//ENTRANDO NO BANCOS DE DADOS E EXCLUINDO O DADO
+            _db.SaveChanges();//Entrando no banco de dados e salvando as informações excluidas
+
+            return RedirectToAction("Index");// Depois de tudo salvo, redireciona o usuario para a pagina index
+
+        }
 
     }
 }
