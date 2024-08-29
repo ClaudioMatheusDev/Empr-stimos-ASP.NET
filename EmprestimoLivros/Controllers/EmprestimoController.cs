@@ -77,9 +77,12 @@ namespace EmprestimoLivros.Controllers
                 _db.Emprestimos.Add(emprestimos); //Entrando no banco de dados, na tabela emprestimo e adicionado novas informações
                 _db.SaveChanges(); //Entrando no banco de dados e salvando as novas informações adicionadas
 
+                TempData["MensagemSucesso"] = "Cadastro realizado com sucesso!";//MENSAGEM DE SUCESSO DA EXCLUSÃO, EDIÇÃO E CADASTRO
+
+
                 return RedirectToAction("Index"); //Depois de tudo salvo, redireciona o usuario para a pagina index
             }
-
+            TempData["MensagemError"] = "Cadastro não foi realizado com sucesso!";
 
             return View(); //CASO O IF NÃO FOR VALIDO, O MESMO RETORNA O USUARIO PARA A VIEW(CADASTRAR) 
 
@@ -94,9 +97,12 @@ namespace EmprestimoLivros.Controllers
                 _db.Emprestimos.Update(emprestimo);//ENTRANDO NO BANCO DE DADOS, NA TABELA EMPRESTIMO E MODIFICANDO APENAS O emprestimo SELECIONADO
                 _db.SaveChanges();//Entrando no banco de dados e salvando as novas informações modificadas
 
+                TempData["MensagemSucesso"] = "Edição realizada com sucesso!"; //MENSAGEM DE SUCESSO DA EXCLUSÃO, EDIÇÃO E CADASTRO
 
                 return RedirectToAction("Index");// Depois de tudo salvo, redireciona o usuario para a pagina index
             }
+
+            TempData["MensagemError"] = "Edição não foi realizada com sucesso!";
 
             return View(emprestimo); //CASO NÃO FOR VALIDO, RETORNA SEMPRE PARA A PAGINA DE ATUALIZAR O EMPRESTIMO
 
@@ -108,10 +114,13 @@ namespace EmprestimoLivros.Controllers
             if (emprestimo == null)
             {
                 return NotFound();
+
             }
 
             _db.Emprestimos.Remove(emprestimo);//ENTRANDO NO BANCOS DE DADOS E EXCLUINDO O DADO
             _db.SaveChanges();//Entrando no banco de dados e salvando as informações excluidas
+
+            TempData["MensagemSucesso"] = "Remoção realizada com sucesso!"; //MENSAGEM DE SUCESSO DA EXCLUSÃO, EDIÇÃO E CADASTRO
 
             return RedirectToAction("Index");// Depois de tudo salvo, redireciona o usuario para a pagina index
 

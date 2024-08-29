@@ -1,6 +1,9 @@
 ﻿@model IEnumerable<EmprestimosModel>
 
 <div class="container">
+
+
+
     <div class="d-flex justify-content-between align-items-center mb-5">
         <h1>Empréstimos</h1>
         <a class="btn btn-success mx-2" asp-controller="Emprestimo" asp-action="Cadastrar"><i class="bi bi-file-earmark-plus mx-2"></i>Cadastrar novo empréstimo</a>
@@ -8,7 +11,19 @@
     </div>
 
 
+    @if (TempData["MensagemSucesso"] != null){
+        <div class="alert alert-success text-light" role="alert">
 
+        @TempData["MensagemSucesso"]
+        </div>
+    } <!-- MENSAGEM DE SUCESSO DA EXCLUSÃO, EDIÇÃO E CADASTRO-->
+
+     @if (TempData["MensagemErro"] != null){
+        <div class="alert alert-danger text-light" role="alert">
+
+            @TempData["MensagemErro"]
+        </div>
+    } <!-- MENSAGEM DE ERROR DA EXCLUSÃO, EDIÇÃO E CADASTRO-->
 
 
     <table id="Emprestimos" class="table table-light table-hover mt-5">
