@@ -16,7 +16,7 @@
 
         <div class="mb-3">
             <label for="Recebedor" class="form-label text-light">Recebedor:</label>
-            <input type="text" class="form-control" asp-for="Recebedor" id="Recebedor" placeholder="Quem está recebendo o livro?">
+            <input type="text" class="form-control text-light" asp-for="Recebedor" id="Recebedor" placeholder="Quem está recebendo o livro?">
             <span class="text-danger" asp-validation-for="Recebedor"></span> <!-- ADICIONANDO O SPAN, ERROR MESSAGE QUE ADICIONAMOS NO NOSSO EMPRESTIMO MODEL, UTILIZANDO O ASP-VALIDATION-FOR -->
         </div>
 
@@ -24,13 +24,13 @@
 
         <div class="mb-3">
             <label for="Fornecedor" class="form-label text-light">Fornecedor</label>
-            <input type="text" class="form-control" asp-for="Fornecedor" id="Fornecedor" placeholder="Quem está emprestando o livro?">
+            <input type="text" class="form-control text-light" asp-for="Fornecedor" id="Fornecedor" placeholder="Quem está emprestando o livro?">
             <span class="text-danger" asp-validation-for="Fornecedor"></span>
         </div>
 
         <div class="mb-3">
             <label for="Livro" class="form-label text-light">Livro:</label>
-            <input type="text" class="form-control" asp-for="LivroEmprestado" id="Livro" placeholder="Qual é o livro que está sendo emprestado?">
+            <input type="text" class="form-control text-light" asp-for="LivroEmprestado" id="Livro" placeholder="Qual é o livro que está sendo emprestado?">
             <span class= "text-danger" asp-validation-for="LivroEmprestado"></span>
         </div>
 

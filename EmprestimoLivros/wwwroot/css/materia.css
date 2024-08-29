@@ -12,6 +12,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
 :root,
 [data-bs-theme=light] {
   --bs-blue: #2196f3;
@@ -195,6 +197,11 @@
   box-sizing: border-box;
 }
 
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -202,16 +209,16 @@
 }
 
 body {
-  margin: 0;
-  font-family: var(--bs-body-font-family);
-  font-size: var(--bs-body-font-size);
-  font-weight: var(--bs-body-font-weight);
-  line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
-  text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    /*font-family: var(--bs-body-font-family);*/
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 hr {
@@ -373,7 +380,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: var(--bs-font-monospace);
+ /* font-family: var(--bs-font-monospace);*/
   font-size: 1em;
 }
 
@@ -466,7 +473,7 @@ select,
 optgroup,
 textarea {
   margin: 0;
-  font-family: inherit;
+/*  font-family: inherit;*/
   font-size: inherit;
   line-height: inherit;
 }
@@ -2165,11 +2172,11 @@ progress {
   padding: 0;
 }
 .form-control::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.4);
+  color: #ccc;
   opacity: 1;
 }
 .form-control::placeholder {
-  color: rgba(0, 0, 0, 0.4);
+  color: #ccc;
   opacity: 1;
 }
 .form-control:disabled {
