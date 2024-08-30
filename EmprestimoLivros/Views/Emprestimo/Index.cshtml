@@ -6,7 +6,11 @@
 
     <div class="d-flex justify-content-between align-items-center mb-5">
         <h1>Empréstimos</h1>
-        <a class="btn btn-success mx-2" asp-controller="Emprestimo" asp-action="Cadastrar"><i class="bi bi-file-earmark-plus mx-2"></i>Cadastrar novo empréstimo</a>
+
+        <div>
+            <a class="btn btn-success mx-2" asp-controller="Emprestimo" asp-action="Exportar"><i class="bi bi-file-earmark-plus mx-2"></i>Exportar</a>
+            <a class="btn btn-success mx-2" asp-controller="Emprestimo" asp-action="Cadastrar"><i class="bi bi-file-earmark-plus mx-2"></i>Cadastrar novo empréstimo</a>
+        </div>
         <!--Botão para entrar na página de cadastro de emprestimo, o mesmo utiliza o asp-controller para entrar no nosso controller e asp-action para localizar o nome da action da view do controlador Cadastrar -->
     </div>
 
