@@ -7,6 +7,7 @@ Este é um projeto de um site de empréstimos desenvolvido utilizando ASP.NET Co
 - Cadastro de usuários
 - Solicitação de empréstimos
 - Gerenciamento de empréstimos
+- Exportar os dados em Excel
 
 ## Tecnologias Utilizadas
 
