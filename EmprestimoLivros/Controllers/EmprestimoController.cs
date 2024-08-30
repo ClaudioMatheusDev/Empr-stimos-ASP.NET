@@ -76,6 +76,9 @@ namespace EmprestimoLivros.Controllers
         {
             if (ModelState.IsValid)//Se o status da model for valido (se a conexão do banco de dados for valida) 
             {
+
+                emprestimos.dataUltimaAtulizacao = DateTime.Now;
+
                 _db.Emprestimos.Add(emprestimos); //Entrando no banco de dados, na tabela emprestimo e adicionado novas informações
                 _db.SaveChanges(); //Entrando no banco de dados e salvando as novas informações adicionadas
 
@@ -96,7 +99,14 @@ namespace EmprestimoLivros.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Emprestimos.Update(emprestimo);//ENTRANDO NO BANCO DE DADOS, NA TABELA EMPRESTIMO E MODIFICANDO APENAS O emprestimo SELECIONADO
+
+                var emprestimoDB = _db.Emprestimos.Find(emprestimo.Id); //Encontrando o id que eu quero alterar
+
+                emprestimoDB.LivroEmprestado = emprestimo.LivroEmprestado;
+                emprestimoDB.Recebedor = emprestimo.Recebedor;
+                emprestimoDB.Fornecedor = emprestimo.Fornecedor;
+
+                _db.Emprestimos.Update(emprestimoDB);//ENTRANDO NO BANCO DE DADOS, NA TABELA EMPRESTIMO E MODIFICANDO APENAS O emprestimo SELECIONADO
                 _db.SaveChanges();//Entrando no banco de dados e salvando as novas informações modificadas
 
                 TempData["MensagemSucesso"] = "Edição realizada com sucesso!"; //MENSAGEM DE SUCESSO DA EXCLUSÃO, EDIÇÃO E CADASTRO
