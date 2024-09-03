@@ -8,5 +8,13 @@ namespace EmprestimoLivros.Controllers
         {
             return View();
         }
+
+
+        public IActionResult Registrar()
+        {
+
+            return View();
+        }
     }
 }
+
