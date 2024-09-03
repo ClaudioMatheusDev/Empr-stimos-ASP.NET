@@ -1,1 +1,60 @@
-﻿<p>Tela Registrar</p>
+﻿@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success text-light" role="alert">
+
+        @TempData["MensagemSucesso"]
+    </div>
+} <!-- MENSAGEM DE SUCESSO-->
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger text-light" role="alert">
+
+        @TempData["MensagemErro"]
+    </div>
+} <!-- MENSAGEM DE ERROR-->
+
+<div class="container">
+    <h1>Cadastro de Usúarios </h1>
+    <form>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email">
+        </div> <!--Email-->
+
+
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome">
+        </div><!--Nome-->
+
+        <div class="mb-3">
+            <label for="sobrenome" class="form-label">Sobrenome:</label>
+            <input type="text" class="form-control" id="sobrenome">
+        </div><!--Sobrenome-->
+
+        <div class="mb-3">
+            <label for="senha" class="form-label">Senha:</label>
+            <input type="password" class="form-control" id="senha">
+        </div><!--Senha-->
+
+
+
+        <div class="mb-3">
+            <label for="senha" class="form-label">Confirma Senha:</label>
+            <input type="password" class="form-control" id="senha">
+        </div><!--Confirmar a Senha-->
+
+
+        <div class="d-flex justify-content-center">
+
+            <button type="submit" class="btn btn-primary w-25 mx-2">Cadastrar</button>
+            <a asp-action="Index" asp-controller="Login" class="btn w-25">Voltar para Login</a>
+
+        </div> <!--Botões-->
+
+
+
+
+
+    </form>
+</div>

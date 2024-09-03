@@ -10,9 +10,10 @@ namespace EmprestimoLivros.Data
         {
         }
 
-        public DbSet<EmprestimosModel> Emprestimos { get; set; }
-        public DbSet<UsuarioModel> Usuarios { get; set; }
+        public DbSet<EmprestimosModel> Emprestimos { get; set; } //CRIANDO A TABELA EMPRESTIMOS
+        public DbSet<UsuarioModel> Usuarios { get; set; }//CRIANDO A TABELA USUARIOS
 
 
     }
 }
+ 
