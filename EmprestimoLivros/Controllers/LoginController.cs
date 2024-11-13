@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EmprestimoLivros.Dto;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EmprestimoLivros.Controllers
 {
@@ -15,6 +16,12 @@ namespace EmprestimoLivros.Controllers
 
             return View();
         }
+        [HttpPost]
+        public IActionResult Registrar(UsuarioRegisterDto usuarioRegisterDto)
+        {
+            return View(usuarioRegisterDto);
+        }
+
 
 
 
